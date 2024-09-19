@@ -1,22 +1,43 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Client.MainPage">
+             x:Class="Client.MainPage"
+             Shell.NavBarIsVisible="False">
 
     <ScrollView>
-        <StackLayout Padding="20" Spacing="20">
-            <Label Text="Cliente de autenticación y eco" FontSize="24" HorizontalOptions="Center" />
+        <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="20">
+            
+            <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="10">
+                <Label Text="Autenticación" FontSize="18" FontAttributes="Bold" />
 
-            <Entry x:Name="AuthEntry" Placeholder="Ingrese credenciales" />
-            <Button Text="Conectar" Clicked="ConnectButton_Clicked" />
+                <Frame WidthRequest="250">
+                    <StackLayout>
+                        <Entry x:Name="AuthEntry" Placeholder="Ingrese credenciales" Margin="0,10,0,10" />
+                        <Button x:Name="ConnectButton" Text="Conectar" Clicked="ConnectButton_Clicked" />
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
 
-            <Entry x:Name="EchoEntry" Placeholder="Escriba mensaje" IsEnabled="False" />
-            <Button x:Name="SendButton" Text="Enviar" Clicked="SendButton_Clicked" IsEnabled="False" />
+            <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="10">
+                <Label Text="Comunicación" FontSize="18" FontAttributes="Bold" />
 
-            <Button Text="Desconectar" Clicked="DisconnectButton_Clicked" />
+                <Frame WidthRequest="250">
+                    <StackLayout>
+                        <Entry x:Name="EchoEntry" Placeholder="Escriba mensaje" IsEnabled="False" Margin="0,10,0,10" />
+                        <Button x:Name="SendButton" Text="Enviar" Clicked="SendButton_Clicked" IsEnabled="False" />
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
 
-            <Label x:Name="ResponseLabel" Text="Respuesta del servidor" FontSize="18" />
+            <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="10">
+                <Label Text="Desconexión" FontSize="18" FontAttributes="Bold" />
+
+                <Frame WidthRequest="250">
+                    <StackLayout>
+                        <Button x:Name="DisconnectButton" Text="Desconectar" Clicked="DisconnectButton_Clicked" IsEnabled="False" />
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
         </StackLayout>
     </ScrollView>
-
 </ContentPage>
